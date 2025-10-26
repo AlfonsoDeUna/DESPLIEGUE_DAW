@@ -10,8 +10,24 @@ cd /var/wwww
 ```
 ### CREAR NUEVO DIRECTORIO DENTRO DE /var/www
 ```bash
-mkdir daw1
+sudo mkdir daw1
 ```
+### CREA UN FICHERO index.html con una pequeña página web con tu nombre
+## CREAR EL FICHERO index.html
+```bash
+sudo nano index.html
+```
+
+```html
+<html>
+<head>
+</head>
+<body>
+	<h1> hola mundo Alfonso </h1>
+</body>
+</html>
+```
+
 ## CONFIGURACIÓN DE APACHE PARA CREAR UN HOST VIRTUAL 
 ### IR AL DIRECTORIO DE CONFIGURACIÓN DE APACHE
 ```bash
@@ -53,4 +69,23 @@ sudo a2ensite daw1.conf
 sudo systemctl restart apache2
 ```
 
+## MODIFICAR EL DNS LOCAL PARA ACCEDER A LA PÁGINA POR DOMINIO
+
+### EDITAR EL FICHERO hosts
+```
+sudo nano /etc/hosts
+```
+verás algo parecido a lo siguiente, y después de estas líneas tienes que añadir lo del siguiente apartado:
+```
+127.0.0.1       localhost
+127.0.1.1       dev2.mynetowork.org
+
+```
+
+#### añade daw1.com a las líneas anteriores GUARDA Y SALVA CON CTRL+O Y CTRL + X
+```
+127.0.0.1       localhost
+127.0.1.1       dev2.mynetowork.org
+127.0.0.1       daw1.com
+```
 
