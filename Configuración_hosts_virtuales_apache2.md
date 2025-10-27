@@ -35,7 +35,7 @@ cd /etc/apache2/sites-available
 ```
 ### Copia el archivo de configuración predeterminado para usarlo como plantilla:
 ```bash
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/daw1.conf.
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/daw1.conf
 ```
 
 ### ABRIR EL FICHERO: daw1.conf para editarlo
