@@ -6,6 +6,8 @@ Prepara un directorio dentro de /var/www/website
 ```
 sudo mkdir /var/www/website
 ```
+## PASOS PARA LA PRÁCTICA
+```
 
 HABILITAR MOD_SSL
 sudo a2enmod ssl
