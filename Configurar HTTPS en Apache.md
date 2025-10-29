@@ -3,9 +3,10 @@
 ## Antes:
 
 Prepara un directorio dentro de /var/www/website
-
-
 ```
+sudo mkdir /var/www/website
+```
+
 HABILITAR MOD_SSL
 sudo a2enmod ssl
 
@@ -16,7 +17,7 @@ CREAR CERTIFICADO SSL
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsig
 
 CONFIGURAR APACHE PARA USAR SSL
-sudo nano /etc/apache2/sites-available/soporte.clockwork.local.conf
+sudo nano /etc/apache2/sites-available/soporte.website.local.conf
 
 <VirtualHost *:443>
 ...............
