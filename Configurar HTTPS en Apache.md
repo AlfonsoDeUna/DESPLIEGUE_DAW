@@ -1,3 +1,10 @@
+# Configurar el https
+
+## Antes:
+
+Prepara un directorio dentro de /var/www/website
+
+
 ```
 HABILITAR MOD_SSL
 sudo a2enmod ssl
@@ -24,13 +31,13 @@ RECARGAR APACHE
 sudo systemctl reload apache2
 
 REDIRIGIR TRÁFICO PUERTO 80 AL 443
-sudo nano /etc/apache2/sites-available/soporte.clockwork.local.conf
+sudo nano /etc/apache2/sites-available/soporte.website.local.conf
 
 <VirtualHost *:80>
-	ServerName soporte.clockwork.local
-	ServerAlias www.soporte.clockwork.local
-	DocumentRoot /var/www/soporte.clockwork.local
-#	Redirect / https://soporte.clockwork.local/
+	ServerName soporte.website.local
+	ServerAlias www.soporte.website.local
+	DocumentRoot /var/www/website
+#	Redirect / https://soporte.website.local/
 </VirtualHost>
 
 COMPROBAR QUE NO HAYA ERRORES EN ARCHIVOS DE CONFIGURACIÓN
