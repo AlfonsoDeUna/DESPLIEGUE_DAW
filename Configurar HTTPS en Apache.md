@@ -1,4 +1,4 @@
-# Configurar el https
+c# Configurar el https
 
 ## Antes:
 
@@ -17,6 +17,7 @@ sudo systemctl restart apache2
 
 CREAR CERTIFICADO SSL
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsig
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 
 CONFIGURAR APACHE PARA USAR SSL
 sudo nano /etc/apache2/sites-available/soporte.website.local.conf
