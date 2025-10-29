@@ -19,19 +19,36 @@ CREAR CERTIFICADO SSL
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 
 CONFIGURAR APACHE PARA USAR SSL
+cp /etc/apache2/sites-available/default-ssl.conf soporte.website.local.conf
 sudo nano /etc/apache2/sites-available/soporte.website.local.conf
 
 <VirtualHost *:443>
+	ServerName soporte.website.local
+	ServerAlias www.soporte.website.local
+	DocumentRoot /var/www/website
 ...............
 	SSLEngine on
 	SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
 	SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 
 COMPROBAR QUE NO HAYA ERRORES EN ARCHIVOS DE CONFIGURACIÓN
+cd /etc/apache2/sites-available
 sudo apache2ctl configtest
+sudo a2enmod soporte.webiste.local.conf
 
 RECARGAR APACHE
 sudo systemctl reload apache2
+
+CONFIGURAR NUESTRO HOSTS
+sudo nano /etc/hosts
+
+y añadimos
+
+127.0.0.1 soporte.website.local
+
+ahora podemos ir al navegador y poner https://soporte.website.local
+
+---------------------------------->>>>>> 29/10  >>>>>>-----------------------------------------------------------------------
 
 REDIRIGIR TRÁFICO PUERTO 80 AL 443
 sudo nano /etc/apache2/sites-available/soporte.website.local.conf
