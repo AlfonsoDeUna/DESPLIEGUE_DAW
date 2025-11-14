@@ -1,3 +1,12 @@
+## Paso PREVIO: Instalar el paquete de utilidades de Apache
+
+Comenzaremos por actualizar nuestro servidor e instalar un paquete que necesitaremos. Para completar este tutorial, usaremos una herramienta llamada `htpasswd`, que forma parte del paquete `apache2-utils`, a fin de crear el archivo y administrar el nombre de usuario y las contraseñas que se necesitarán para acceder a contenido restringido.
+
+```bash
+sudo apt-get update
+sudo apt-get install apache2-utils
+```
+
 ## 1.Crear el Archivo de Contraseñas
 
 Abre una terminal y ejecuta esto. Te pedirá que escribas una contraseña para usuario_admin (puedes cambiar "usuario_admin" por el nombre que quieras).
@@ -70,4 +79,4 @@ sudo systemctl restart apache2
 
 Si nos pide usuario y contraseña hemos acabado.
 
-Verás que, antes de mostrarte la página, el navegador te pedirá un usuario y una contraseña. Debes poner el usuario_admin y la contraseña que creaste en el paso 1.
+Verás que, antes de mostrarte la página, el navegador te pedirá un usuario y una contraseña. Debes poner el `usuario_admin` y la contraseña que creaste en el paso 1.
