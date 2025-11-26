@@ -5,7 +5,7 @@ mvn archetype:create -DgroupId=chuidiang.ejemplos -DartifactId=ServletMaven -Dar
 donde chuidiang.ejemplos es el nombre del paquete que queramos para nuestras clases y ServletMaven es el nombre que queramos para nuestro proyecto.
 
 Esto creará un directorio ServletMaven con la siguiente estructura de subdirectorios/ficheros por debajo
-
+```
 SERVLETMAVEN
 ├───pom.xml
 └───src
@@ -15,6 +15,8 @@ SERVLETMAVEN
             ├───index.jsp
             └───WEB-INF
                 └───web.xml
+```
+
 El fichero pom.xml es propio de maven. El fichero index.jsp es una simple página jsp con un "Hola Mundo". El fichero web.xml tiene la información mínima para ese fichero
 ```xml
 <!DOCTYPE web-app PUBLIC
