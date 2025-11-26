@@ -1,8 +1,12 @@
-Crear una aplicación web con Maven
-Desde una ventana de ms-dos o bash de linux nos vamos al directorio donde queramos crear el proyecto y escribimos
+# Crear una aplicación web con Maven
 
-mvn archetype:create -DgroupId=chuidiang.ejemplos -DartifactId=ServletMaven -DarchetypeArtifactId=maven-archetype-webapp
-donde chuidiang.ejemplos es el nombre del paquete que queramos para nuestras clases y ServletMaven es el nombre que queramos para nuestro proyecto.
+Desde una ventana de el terminal de linux nos vamos al directorio donde queramos crear el proyecto y escribimos
+
+```
+mvn archetype:create -DgroupId=alfonsodaw.ejemplos -DartifactId=ServletMaven -DarchetypeArtifactId=maven-archetype-webapp
+```
+
+donde alfonsodaw.ejemplos es el nombre del paquete que queramos para nuestras clases y ServletMaven es el nombre que queramos para nuestro proyecto.
 
 Esto creará un directorio ServletMaven con la siguiente estructura de subdirectorios/ficheros por debajo
 ```
@@ -28,7 +32,7 @@ El fichero pom.xml es propio de maven. El fichero index.jsp es una simple págin
 </web-app>
 ```
 
-Añadir dependencias a nuestra aplicación web con maven
+## Añadir dependencias a nuestra aplicación web con maven
 Para que maven sea capaz de compilar nuestro proyecto, debemos añadirle los jar de los que dependemos. Mínimo necesitamos la dependencia del jar donde están la API de Servlet de Sun. Podríamos poner otras dependencias, como el conector de Mysql-Java.
 
 Maven, por defecto, compila con java 1.3. Suele ser buena idea indicarle que lo haga con java 5 o la versión más moderna que tengamos.
@@ -101,20 +105,20 @@ Hay que tener cuidad con la versión de servlet-api que se pone aquí. Debe ser 
 </project>
 ```
 
-Creamos los fuentes de nuestro Servlet
-Debajo del directorio main, creamos un subdirectorio java y a partir de ahí ponemos nuestros fuentes. En nuestro caso crearemos un sudirectorio chuidiang, debajo uno ejemplos y finalmente dentro de este nuestro ServletMaven.java. La estructura de directorios quedará así
+## Creamos los fuentes de nuestro Servlet
+Debajo del directorio main, creamos un subdirectorio java y a partir de ahí ponemos nuestros fuentes. En nuestro caso crearemos un sudirectorio alfonsodaw, debajo uno ejemplos y finalmente dentro de este nuestro ServletMaven.java. La estructura de directorios quedará así
 
 ```
 SERVLETMAVEN
 └───src
     └───main
         ├───java
-        │   └───chuidiang
+        │   └───alfonsodaw
         │       └───ejemplos
         │           └───ServletMaven.java
         ├───resources
         └───webapp
-            ├───chuidiang
+            ├───alfonsodaw
             │   └───ejemplos
             └───WEB-INF
 ```
@@ -122,7 +126,7 @@ SERVLETMAVEN
 Nuestro programa java será un simple "Hola Mundo", tal que así
 
 ```java
-package chuidiang.ejemplos;
+package alfonsodaw.ejemplos;
 
 import java.io.*;
 
@@ -167,7 +171,7 @@ El el fichero web.xml debemos poner las líneas para nuestro Servlet
 
    <servlet>
         <servlet-name>ServletMaven</servlet-name>
-	<servlet-class>chuidiang.ejemplos.ServletMaven</servlet-class>
+	<servlet-class>alfonsodaw.ejemplos.ServletMaven</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -193,28 +197,28 @@ SERVLETMAVEN
 ├───src
 │   └───main
 │       ├───java
-│       │   └───chuidiang
+│       │   └───alfonsodaw
 │       │       └───ejemplos
 │       ├───resources
 │       └───webapp
-│           ├───chuidiang
+│           ├───alfonsodaw
 │           │   └───ejemplos
 │           └───WEB-INF
 └───target
     ├───ServletMaven.war
     ├───classes
-    │   └───chuidiang
+    │   └───alfonsodaw
     │       └───ejemplos
     │           └───ServletMaven.class
     └───ServletMaven
-        ├───chuidiang
+        ├───alfonsodaw
         │   └───ejemplos
         │       └───ServletMaven.java
         ├───META-INF
         └───WEB-INF
             ├───web.xml
             ├───classes
-            │   └───chuidiang
+            │   └───alfonsodaw
             │       └───ejemplos
             │           └───ServletMaven.class
             └───lib
