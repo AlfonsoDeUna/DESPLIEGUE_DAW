@@ -104,6 +104,7 @@ Hay que tener cuidad con la versión de servlet-api que se pone aquí. Debe ser 
 Creamos los fuentes de nuestro Servlet
 Debajo del directorio main, creamos un subdirectorio java y a partir de ahí ponemos nuestros fuentes. En nuestro caso crearemos un sudirectorio chuidiang, debajo uno ejemplos y finalmente dentro de este nuestro ServletMaven.java. La estructura de directorios quedará así
 
+```
 SERVLETMAVEN
 └───src
     └───main
@@ -116,6 +117,8 @@ SERVLETMAVEN
             ├───chuidiang
             │   └───ejemplos
             └───WEB-INF
+```
+
 Nuestro programa java será un simple "Hola Mundo", tal que así
 
 ```java
@@ -184,7 +187,7 @@ mvn package
 crea un subdirectorio target, compilará todo el proyecto y meterá los .class en el subdirectorio target, generará toda la estructura de directorios para el despliegue y finalmente la empaqueta en un fichero ServletMaven.war y meterá todo esto también en target.
 
 El resultado final puede ser como este
-
+```
 SERVLETMAVEN
 ├───.settings
 ├───src
@@ -216,7 +219,7 @@ SERVLETMAVEN
             │           └───ServletMaven.class
             └───lib
                 └───servlet-api-2.4.jar
-
+```
 
 Desplegar el proyecto
 Ahora, en el directorio webapp de donde tengamos instalado Tomcat, podemos optar por copiar el directorio ServletMaven que hay justo debajo de target, o bien copiar el fichero ServletMaven.war. En mi caso me he decidido por esto último. He copiado el fichero ServletMaven.war en el directorio webapp de Tomcat.
