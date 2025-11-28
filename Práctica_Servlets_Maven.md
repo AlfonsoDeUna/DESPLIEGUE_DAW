@@ -129,13 +129,17 @@ package alfonsodaw.ejemplos;
 
 import java.io.*;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;      // Para ServletException
+import jakarta.servlet.http.*; // Para HttpServlet, Request y Response
+import jakarta.servlet.annotation.WebServlet; // Para la anotación (opcional si usas web.xml)
 
+// La anotación define la URL: http://localhost:8080/tu-proyecto/hola
+// @WebServlet("/hola") 
 public class ServletMaven extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+    @Override // Buena práctica añadir esto
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// Obtenemos un objeto Print Writer para enviar respuesta
 		res.setContentType("text/html");
@@ -147,6 +151,8 @@ public class ServletMaven extends HttpServlet {
 		pw.println("</body>");
 		pw.close();
 	}
+
+    @Override
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		doGet(req,res);
 	}
