@@ -43,11 +43,12 @@ Tanto para añadir la dependencia de la API Servlet de Sun como para indicar que
 <project>
   ...  
   <dependencies>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.4</version>
-      <scope>provided</scope>
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>5.0.0</version>
+    <scope>provided</scope> 
+</dependency>	
     </dependency>
     ...
   </dependencies>
