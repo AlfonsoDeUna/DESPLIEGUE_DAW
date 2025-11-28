@@ -54,17 +54,6 @@ Tanto para añadir la dependencia de la API Servlet de Sun como para indicar que
   </dependencies>
   <build>
       ...
-      <plugins>
-         <plugin>
-             <groupId>org.apache.maven.plugins</groupId>
-             <artifactId>maven-compiler-plugin</artifactId>
-             <configuration>
-                 <source>1.5</source>
-                 <target>1.5</target>
-             </configuration>
-         </plugin>
-      </plugins>
-
   </build>
 </project>
 ```
@@ -87,18 +76,27 @@ Hay que tener cuidad con la versión de servlet-api que se pone aquí. Debe ser 
   </dependencies>
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.0</version>
-        <configuration>      <!-- Se añade esto en la configuracion -->
-          <archive>
-            <manifest>
-              <addClasspath>false</addClasspath>
-            </manifest>
-          </archive>
-        </configuration>
-      </plugin>
+      	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		     <artifactId>maven-compiler-plugin</artifactId>
+		     <configuration>
+		         <source>1.8</source>
+		         <target>1.8</target>
+		     </configuration>
+		 </plugin>
+
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>2.0</version>
+			<configuration>      
+		  		<archive>
+		    		<manifest>
+		      			<addClasspath>false</addClasspath>
+		    		</manifest>
+		  	</archive>
+		</configuration>
+	      </plugin>
       [...]
     </plugins>
   </build>
