@@ -240,6 +240,17 @@ Ahora, en el directorio webapp de donde tengamos instalado Tomcat, podemos optar
 
 Para probarlo, abro el navegador y escribo
 ```
-http://localhost:8080/ServletMaven/ServletMaven
+# Prueba primero... Ejecutará el index.jsp
+http://localhost:8080
+# Para acceder al Servlet se realiza desde la siguiente dirección 
+http://localhost:8080/ServletMaven/
 ```
 y obtengo el "Hola Mundo"
+
+## Ejercicicios
+
+1. Modifica el fichero web.xml para acceder al Servlet desde la siguiente dirección http://localhost:8080/hola
+2. Modifica el Servlet para que ponga tu nombre.
+3. Modifica el index.jsp para que ponga tu nombre.
+4. Crea un segundo Servlet que ponga "Este es el segundo servlet que he creado en DAW"
+5. ...
