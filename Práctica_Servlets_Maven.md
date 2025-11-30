@@ -63,20 +63,26 @@ Una de las maravillas de maven es que no necesitamos tener en ningún sitio de n
 Hay que tener cuidad con la versión de servlet-api que se pone aquí. Debe ser compatible con la que viene con Tomcat. De hecho, podemos poner en el fichero pom.xml que no incluya el servlet-api.jar dentro del fichero war que se generará más adelante.
 
 ```xml
-<project>
-  [...]
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>alfonsodaw.ejemplos</groupId>
+  <artifactId>proyectoJava</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>proyectoJava Maven Webapp</name>
+  <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.4</version>
-      <scope>provided</scope>  <!-- Se cambia compile por provided -->
-    </dependency>
-    ...
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>5.0.0</version>
+    <scope>provided</scope> 
+</dependency>	
   </dependencies>
   <build>
-    <plugins>
-      	    <plugin>
+	<plugins>
+		<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		     <artifactId>maven-compiler-plugin</artifactId>
 		     <configuration>
@@ -97,10 +103,9 @@ Hay que tener cuidad con la versión de servlet-api que se pone aquí. Debe ser 
 		  	</archive>
 		</configuration>
 	      </plugin>
-      [...]
-    </plugins>
+	</plugins>
+    <finalName>proyectoJava</finalName>
   </build>
-  [...]  
 </project>
 ```
 
