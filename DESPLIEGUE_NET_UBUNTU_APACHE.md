@@ -13,7 +13,7 @@ sudo apt-get install -y apt-transport-https
 2. **Instalar .NET SDK 5.0:**
 ```bash
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-5.0
+sudo apt-get install -y dotnet-sdk-8.0
 
 ```
 
@@ -27,23 +27,12 @@ sudo apt-get install apache2
 
 ```
 
-
-
-
-
 4. **Habilitar módulos proxy de Apache:**
 ```bash
 systemctl restart apache2
 a2enmod proxy proxy_http proxy_html
 
 ```
-
-
-
-
-
-
----
 
 #### 2. Publicación y Transferencia de Archivos
 
@@ -52,8 +41,8 @@ a2enmod proxy proxy_http proxy_html
 
 2. **Preparar directorio en la Máquina Virtual (Linux):**
 ```bash
-cd /var/
-sudo mkdir DotNetApp
+cd /var/www
+sudo mkdir net_html
 
 ```
 
@@ -64,12 +53,7 @@ sudo mkdir DotNetApp
 
 * Moverlos al directorio final:
 
-
-```bash
-cd /home/azureuser/App
-sudo cp -R * /var/DotNetApp/
-
-```
+COPIA LOS FICHEROS PUBLICADOS A LA DIRECTORIO net_html
 ---
 
 #### 3. Configuración del Servidor Inverso (Apache)
@@ -83,13 +67,13 @@ sudo nano /etc/apache2/conf-enabled/DotNetApp.conf
 2. **Contenido del archivo `DotNetApp.conf`:**
 Pegar lo siguiente para redirigir el tráfico del puerto 80 al 5000:
 ```apache
-<VirtualHost *:80>
+[<VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
     ErrorLog /var/log/apache2/DotNetApp-error.log
     CustomLog /var/log/apache2/DotNetApp-access.log common
-</VirtualHost>
+</VirtualHost>](https://github.com/AlfonsoDeUna/DESPLIEGUE_DAW/blob/main/DESPLIEGUE_NET_UBUNTU_APACHE.md)
 
 ```
 
@@ -119,7 +103,7 @@ sudo nano /etc/systemd/system/kestrel-DotNetApp.service
 *(Asegúrate de ajustar la ruta del `.dll` al nombre de tu proyecto)*
 ```ini
 [Unit]
-Description=Aspnet 5 Web App running on Ubuntu
+Description=Aspnet 8 Web App running on Ubuntu
 
 [Service]
 WorkingDirectory=/var/DotNetApp
